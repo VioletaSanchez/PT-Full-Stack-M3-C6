@@ -11,16 +11,16 @@ Usaremos clases en Python para tener el mismo comportamiento en múltiples lugar
 
 ![](./images/18.png)
 
-Una vez ejecutamos este código podemos ver (imagen a continuación) que con esto no estamos regresando los valores que le hemos pasado, ahora mismo estamos viendo el dunder __main__, que es un método especial del que hablaremos más adelante.
+Una vez ejecutamos este código podemos ver (imagen a continuación) que con esto no estamos regresando los valores que le hemos pasado, ahora mismo estamos viendo el dunder \_\_main__, que es un método especial del que hablaremos más adelante.
 
 ![](./images/19.png)
 
 Además de esto, podemos crear subclases que hereden el comportamiento de las clases de las que fueron creadas para tener código más específico.
 
 ## 2) ¿Qué método se ejecuta automáticamente cuando se crea una instancia de una clase?
-En Python, cuando creamos una instancia de cualquier clase, el método __init__ se creará y ejecutará automáticamente antes de ejecutar cualquier otro método. Este método se usa para procesar toda la información necesaria para poder usar la clase. Habitualmente usaremos el método __init__ para añadir datos a la clase.
+En Python, cuando creamos una instancia de cualquier clase, el método \_\_init__ se creará y ejecutará automáticamente antes de ejecutar cualquier otro método. Este método se usa para procesar toda la información necesaria para poder usar la clase. Habitualmente usaremos el método \_\_init__ para añadir datos a la clase.
 
-El primer argumento que le pasamos a __init__ debe ser self. Además de self, __init__ admite otros argumentos, cosa que veremos a continuación. La estructura que usaremos dentro de esta función debe ser self.argumento = argumento, de esta forma hacemos que argumento se refiera a la propia instancia.
+El primer argumento que le pasamos a \_\_init__ debe ser self. Además de self, \_\_init__ admite otros argumentos, cosa que veremos a continuación. La estructura que usaremos dentro de esta función debe ser self.argumento = argumento, de esta forma hacemos que argumento se refiera a la propia instancia.
 
 ![](./images/20.png)
 
@@ -55,8 +55,11 @@ API es el acrónimo de Aplication Programming Interface, que es una manera de co
 En el mundo de la programación moderno es muy común trabajar con APIs. Podemos esperar que todos los servicios grandes que encontremos tengan su propia API por lo que familiarizarnos con la documentación es de vital importancia. A continuación encontrarás una lista de enlaces con más información en caso de que quieras trabajar con estas APIs.
 
 https://developers.google.com/youtube/v3?hl=es-419
+
 https://developer.twitter.com/
+
 https://developers.facebook.com/products/instagram/apis/
+
 https://core.telegram.org/
 
 
@@ -79,15 +82,15 @@ En nuestra clase que no queremos accesible al usuario podemos crear el siguiente
 Una vez creado éste método, todas podemos crear las subclases necesarias que hereden la clase que no queremos accesible al usuario. Estas clases que pueden ser llamadas pueden acceder al método que sea necesario y ejecutarlo, ya que estas clases heredan todos los comportamientos de las clases desde las que se crean. Sin embargo, si se da el caso que estas subclases no pueden acceder a este método (render en el ejemplo) entonces veremos un error en la consola y podemos pasar a corregir el bug.
 
 ## 8) ¿Qué es un método dunder?
-Los métodos “dunder” son los métodos que empiezan y acaban con dos guiones bajos. Ejemplos de métodos dunder son __init__ (que hemos visto anteriormente), __str__ o __repr__. Los métodos dunder son equivalentes a los métodos privados o protegidos que podemos encontrar en otros lenguajes de programación.
+Los métodos “dunder” son los métodos que empiezan y acaban con dos guiones bajos. Ejemplos de métodos dunder son \_\_init__ (que hemos visto anteriormente), \_\_str__ o \_\_repr__. Los métodos dunder son equivalentes a los métodos privados o protegidos que podemos encontrar en otros lenguajes de programación.
 
 Los métodos dunder son métodos que existen directamente en el lenguaje Python. No son métodos de terceros ni métodos que nosotras hayamos creado. Por lo tanto, no debemos tratar de sobrescribir estos métodos.
 
-Los métodos dunder pueden coger múltiples argumentos, aunque siempre le pasaremos self como primer argumento. Si le pasamos más de un argumento, dentro del método querremos asignar esos valores a la propia instancia del método usando el mismo código que hemos visto en el segmento donde hablamos de __init__.
+Los métodos dunder pueden coger múltiples argumentos, aunque siempre le pasaremos self como primer argumento. Si le pasamos más de un argumento, dentro del método querremos asignar esos valores a la propia instancia del método usando el mismo código que hemos visto en el segmento donde hablamos de \_\_init__.
 
 En los métodos dunder podemos tener código tan sencillo como el que vemos a continuación (en la siguiente imagen) o código tan complejo como vimos anteriormente (en el punto dos).
 
-Ejecutamos este código sencillo que cuenta con __str__:
+Ejecutamos este código sencillo que cuenta con \_\_str__:
 
 ![](./images/21.png)
 
