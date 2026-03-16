@@ -1,16 +1,28 @@
 # Checkpoint 6
-# Cree una clase de Python llamada Usuario que use el método init y cree un nombre de usuario y una contraseña. Crea un objeto usando la clase
+# Cree una clase de Python llamada Usuario que use el método init y cree un nombre de usuario y un mail. Crea un objeto usando la clase
 
 # Creamos la clase de Usuario
 class Usuario:
-    # Le pasamos los argumentos de usuario y contraseña. Además los asignamos a self para poder usarlos a continuación
-    def __init__(self, usuario, contraseña):
+    # Le pasamos los argumentos de usuario y mail. Además los asignamos a self para poder usarlos a continuación
+    def __init__(self, usuario, mail):
         self.usuario = usuario
-        self.contraseña = contraseña
+        self.mail = mail
 
+    # Retornamos un f-string con el usuario y el mail.
+        print(f"Información obtenida. Usuario: {self.usuario}. Mail: {self.mail}.")
 
 # Instanciamos la clase
-usuario_uno = Usuario("Violeta", "1234")
+usuario_uno = Usuario("Violeta", "vi@gmail.com")
+usuario_dos = Usuario("Daphne", "daphne@gmail.com")
+usuario_tres = Usuario("Jon Ander", "motocross@protonmail.com")
+usuario_cuatro = Usuario("Lisa", "LH@gmail.com")
 
-# Enseñamos usuario_uno por pantalla, que nos permite ver el objeto Usuario y dónde está en memoria
-print(usuario_uno)
+# Enseñamos por pantalla múltiples usuarios
+print("\nEnseñamos los siguientes mensajes a los usuarios.\n")
+print(f"Hola, {usuario_uno.usuario}. Tu correo electrónico es : {usuario_uno.mail}")
+
+print(f"Hola, {usuario_dos.usuario}. Tu correo electrónico es : {usuario_dos.mail}")
+
+print(f"Hola, {usuario_tres.usuario}. Tu correo electrónico es : {usuario_tres.mail}")
+
+print(f"Hola, {usuario_cuatro.usuario}. Tu correo electrónico es : {usuario_cuatro.mail}")
