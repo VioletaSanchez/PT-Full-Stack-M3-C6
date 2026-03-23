@@ -51,7 +51,8 @@ Con estos argumentos que le pasamos podemos añadirle datos directamente a esta 
             self.balcón = balcón
         
         def formatter(self):
-            return f"Las condiciones de la habitación son las siguientes. Piso: {self.piso}. Baños: {self.baños}. Camas: {self.camas}. Balcón: {self.balcón}."
+            return f"Las condiciones de la habitación son las siguientes. Piso: {self.piso}. Baños: {self.baños}. 
+            Camas: {self.camas}. Balcón: {self.balcón}."
     
     habitación_uno = Habitaciones(1, 2, 2, False)
     habitación_dos = Habitaciones(2, 1, 2, False)
@@ -83,6 +84,9 @@ Con estos argumentos que le pasamos podemos añadirle datos directamente a esta 
 
 Hemos creado una clase de nombre Habitaciones. Hemos creado una función constructor con \_\_init__. Le hemos pasado self para tener acceso a cada instancia de la clase. Después le pasamos piso, baños, camas y balcón como argumentos. Entonces le asignamos esos argumentos al objeto con self.piso = piso, self.baños = baños, etc. Le estamos diciendo al programa que cree una variable dentro del objeto, que se llame pisos y que tenga el valor que le pasamos. Hacemos lo mismo para el resto de argumentos. Por último la función formatter nos devuelve un string con las condiciones de la habitación a través de las sentencias self. En lugar de formatter es posible darle cualquier otro nombre a éste método, pero darle un nombre claro ayuda a entender su propósito.
 
+Ahora tenemos estos objetos dispoibles.
+
+![](./images/34.png)
 
 ## 3) ¿Cuáles son los tres verbos de API?
 Hay múltiples métodos que usaremos cuando trabajemos con APIs. Los más comunes son GET, POST, PUT y DELETE, que forman las operaciones CRUD. CRUD viene de las iniciales de Create, Read, Update y Delete.
@@ -194,16 +198,22 @@ Una vez que pulsemos el botón "send", Postman se comunicará con el enlace que 
 
 Es importante saber que además de poder apuntar a una aplicación online, gracias a Postman también podemos apuntar a localhost si tenemos un servidor configurado y ejecutándose en la máquina en la que estamos trabajando. Esto puede resultarnos muy interesante en caso de que estemos desarrollando una aplicación, ya que nos permite realizar cambios rápidos y testearlos sin necesidad de desplegar cada pequeño cambio.
 
-Además, Postman dispone de un agente de chat AI que podemos usar si así lo deseamos. ![](./images/27.png)
+Además, Postman dispone de un agente de chat AI que podemos usar si así lo deseamos.
+
+![](./images/27.png)
 
 ## 7) ¿Qué es el polimorfismo?
-Hay ocasiones en las no queremos que las clases de nuestro código sean accesibles al usuario (por motivos que pueden ser de logística, de seguridad, etc) y sin embargo, queremos tener ese comportamiento en nuestro código. Para ello el polimorfismo es la herramienta ideal.
+La idea detrás del polimorfismo es la de querer tener diferente comportamiento con la misma clase dependiendo de las condiciones que se den.
 
-En nuestra clase que no queremos accesible al usuario podemos crear el siguiente método:
+La herencia de clases es, posiblemente, una de las mejores formas de visualizar el polimorfismo. La clase padre será una clase de uso general mientras que las clases hijo que heredan de esa clase padre tendrán comportamiento específico que no querremos aplicar en cada uno de los casos.
 
-![](./images/16.png)
+Por ejemplo, dentro de nuestra web podemos tener una clase padre para todos los usuarios. Esta clase se encargará de llevar a cabo el login, de reportar los errores que los usuarios se encuentren y de registrar los tiempos de cada usuario. Además de ésta primera clase padre, nos resultará interesante tener una clase hijo de esta clase Usuario para manejar los paneles adicionales que tengan los administradores. Estos paneles pueden servir para administrar otros usuarios, para gestionar mensajes marcados como potencialmente peligrosos, etc. Disponer de esta funcionalidad en una aplicación grande es algo que probablemente queramos en nuestro sistema, y sin embargo, sería descabellado que todos los usuarios pudieran acceder a ello. El poliformismo nos echa una mano de esta forma.
 
-Una vez creado éste método, todas podemos crear las subclases necesarias que hereden la clase que no queremos accesible al usuario. Estas clases que pueden ser llamadas pueden acceder al método que sea necesario y ejecutarlo, ya que estas clases heredan todos los comportamientos de las clases desde las que se crean. Sin embargo, si se da el caso que estas subclases no pueden acceder a este método (render en el ejemplo) entonces veremos un error en la consola y podemos pasar a corregir el bug.****bunch of images here. spam the f~ out of it
+Además, usar polimorfismo en nuestro desarrollo hace que el código sea más limpio y escalable. Es cierto que podemos conseguir la misma funcionalidad si realmente no deseamos utilizar la herramienta que es el polimorfismo, pero el resultado será que nos encontraremos con segmentos de código que se repetirán una y otra vez en nuestro código, de forma que no estaremos siguiendo las Mejores Prácticas.
+
+De la misma forma, el hecho de que gracias al poliformismo tengamos acceso a clases hijas con comportamiento especializado los da la oportunidad de aislar los errores o bugs que podamos encontrarnos, haciendo que comprometer toda la aplicación sea más complicado.
+
+Desde luego, si el software que estamos contruyendo nos suplica que usemos polimorfismo para tratar varios casos diferentes con comportamiento separado, no hay motivo de peso para no hacerlo.
 
 ## 8) ¿Qué es un método dunder?
 Los métodos “dunder” son los métodos que empiezan y acaban con dos guiones bajos. De hecho, de ahí sacan su nombre, ya que en inglés nos encontraremos con dos guiones bajos, '*D*ouble *UNDER*score' seguido del nombre del método, como por ejemplo init, y después seguido de otros dos guiones bajos. Ejemplos de métodos dunder son \_\_init__ (que hemos visto anteriormente), \_\_str__ o \_\_repr__. Los métodos dunder son equivalentes a los métodos privados o protegidos que podemos encontrar en otros lenguajes de programación.
