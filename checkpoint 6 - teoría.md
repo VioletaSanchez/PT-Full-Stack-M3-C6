@@ -7,9 +7,9 @@
 Las clases son una parte fundamental en el mundo de la programación. Las clases en Python nos permiten crear planos con objetos. Las clases pueden tener datos y comportamientos en ellas. Usaremos clases en Python para tener el mismo comportamiento en múltiples lugares de nuestro código, al ser código que podemos llamar cuando necesitemos usarlo.
 
 La sintaxis para una de las clases más simple posible es:
-class Usuarios:
-    def saludo(self):
-        return "Hola, buenos días."
+    class Usuarios:
+        def saludo(self):
+            return "Hola, buenos días."
 
 Es importante pasarle siempre "self" como el primer argumento a las clases en Python. Para llamar a esta clase debemos instanciarla. La instanciación es el proceso de crear un objeto con esta clase, para lo que ejecutamos el siguiente código:
 
